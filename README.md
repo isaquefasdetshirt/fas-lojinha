@@ -18,7 +18,7 @@ Passos para rodar localmente:
 1. Baixe e descompacte este ZIP.
 2. No root do projeto crie um arquivo `.env.local` com as variáveis do .env.example preenchidas:
 
-NEXT_PUBLIC_SUPABASE_URL=https://jqbhtdwhipwyawarrdga.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=https://jqbwpewhipwbjuargpla.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=SEU_ANON_KEY_AQUI
 
 (Não colocar SERVICE_ROLE no .env do frontend)
