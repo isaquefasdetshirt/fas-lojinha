@@ -179,9 +179,9 @@ export default function Dashboard() {
   async function loadProfiles() {
     try {
       setLoading(true);
-      const { data, error } = await supabase.from('profiles').select('id, full_name, email, raw_user_meta_data').limit(5000);
+      const { data, error } = await supabase.from('profiles').select('id, full_name, email, birthday').limit(5000);
       if (error) throw error;
-      const mapped = (data || []).map(p => ({ id: p.id, full_name: p.full_name || p.email || p.id, email: p.email, birthday: p.raw_user_meta_data?.birthday ?? null }));
+      const mapped = (data || []).map(p => ({ id: p.id, full_name: p.full_name || p.email || p.id, email: p.email, birthday: p.birthday ?? null }));
       setProfiles(mapped);
       const map = {}; mapped.forEach(p => { map[p.id] = p.full_name || p.email || p.id; }); setCreatorNameMap(map);
 
@@ -1111,4 +1111,5 @@ export default function Dashboard() {
 
     </Layout>
   );
+
 }
